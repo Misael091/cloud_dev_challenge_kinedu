@@ -260,6 +260,13 @@
     
     function gformSuccess(formdata,msg,textmessage) {
         formdata[0].reset();
+	 validate_find = formdata.find('select')
+	if(validate_find.length>0){
+	 validate_find.each(function(){
+                 $(this).prop('selectedIndex',0);
+	        });
+
+	}
         gsubmitMSG(true, msg,textmessage);
         $("input").removeClass('notEmpty'); // resets the field label after submission
     }
